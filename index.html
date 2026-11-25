@@ -1,9 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#02040a">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <title>BolBahi - Voice Khata</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +25,6 @@
       <small>"Instant voice khata—no typing needed."</small>
     </form>
   </section>
-
   <div id="app" hidden>
     <header class="header">
       <div class="brand">
@@ -35,70 +36,43 @@
             <rect x="25" y="14" width="3.5" height="8" rx="1.75" fill="currentColor"/>
           </svg>
         </div>
-        <div>
-          <h1>BolBahi</h1>
-          <p>Speak. Record. Track.</p>
-        </div>
+        <div><h1>BolBahi</h1><p>Speak. Record. Track.</p></div>
         <button id="logoutButton" class="logout-button" type="button">Logout</button>
       </div>
     </header>
-
     <main class="container">
       <section class="voice-card">
-        <h2>Voice Entry</h2>
-        <p class="subtitle">Select language and speak</p>
+        <h2>Voice Entry</h2><p class="subtitle">Select language and speak</p>
         <select id="languageSelect" class="language-select" aria-label="Choose language">
-          <option value="en-IN">English</option>
-          <option value="kn-IN">Kannada</option>
-          <option value="hi-IN">Hindi</option>
+          <option value="en-IN">English</option><option value="kn-IN">Kannada</option><option value="hi-IN">Hindi</option>
         </select>
         <button id="micButton" class="mic-button" type="button" aria-label="Start voice recording">🎤</button>
-        <div id="waveform" class="waveform">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
+        <div id="waveform" class="waveform"><span></span><span></span><span></span><span></span><span></span></div>
         <p id="voiceStatus" class="voice-status">Tap the microphone to start</p>
         <p class="voice-help">Example: “Ravi 500 pending” or “Ravi 200 paid”</p>
       </section>
-
       <section class="dashboard">
-        <div class="total-card paid-card">
-          <div class="card-label">Total Paid</div>
-          <div id="paidTotal" class="total-value">₹0</div>
-        </div>
-        <div class="total-card pending-card">
-          <div class="card-label">Total Pending</div>
-          <div id="pendingTotal" class="total-value">₹0</div>
-        </div>
+        <div class="total-card paid-card"><div class="card-label">Total Paid</div><div id="paidTotal" class="total-value">₹0</div></div>
+        <div class="total-card pending-card"><div class="card-label">Total Pending</div><div id="pendingTotal" class="total-value">₹0</div></div>
       </section>
-
-      <section class="search-section">
-        <h2>Customers</h2>
-        <input type="search" id="customerSearch" class="customer-search" placeholder="Search customer by name..." autocomplete="off">
-      </section>
-
+      <section class="search-section"><h2>Customers</h2><input type="search" id="customerSearch" class="customer-search" placeholder="Search customer by name..." autocomplete="off"></section>
       <section class="records-section">
-        <div class="records-card">
-          <h2>Paid Transactions</h2>
-          <div id="paidList"><p class="empty">No paid transactions yet.</p></div>
-        </div>
-        <div class="records-card">
-          <h2>Pending Transactions</h2>
-          <div id="pendingList"><p class="empty">No pending transactions yet.</p></div>
-        </div>
+        <div class="records-card"><h2>Paid Transactions</h2><div id="paidList"><p class="empty">No paid transactions yet.</p></div></div>
+        <div class="records-card"><h2>Pending Transactions</h2><div id="pendingList"><p class="empty">No pending transactions yet.</p></div></div>
       </section>
-
       <section id="customerProfile" class="profile-section" hidden>
-        <div class="profile-top">
-          <button id="backToCustomers" type="button" class="back-button">← Back to Customers</button>
-        </div>
+        <div class="profile-top"><button id="backToCustomers" type="button" class="back-button">← Back to Customers</button></div>
         <div id="profileContent"></div>
       </section>
-
       <button id="clearButton" class="clear-button" type="button">Clear All Records</button>
     </main>
-
     <footer>BolBahi — Your voice, your khata.</footer>
   </div>
   <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(console.error));
+    }
+  </script>
 </body>
 </html>
