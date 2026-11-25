@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BolBahi - Voice Khata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="login-card" id="loginCard">
+    <div class="login-mark">B</div>
+    <h1>BolBahi</h1>
+    <p>Shopkeeper Login</p>
+    <form id="loginForm">
+      <input id="mobileNumber" type="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" placeholder="Mobile Number" autocomplete="tel" required>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button type="submit">Login / Create Account</button>
+      <p id="loginError" class="error" role="alert"></p>
+      <small>"Instant voice khata—no typing needed."</small>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-label="BolBahi logo">
+          <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="7" y="13" width="3.5" height="10" rx="1.75" fill="currentColor"/>
+            <rect x="13" y="8" width="3.5" height="20" rx="1.75" fill="currentColor"/>
+            <rect x="19" y="11" width="3.5" height="14" rx="1.75" fill="currentColor"/>
+            <rect x="25" y="14" width="3.5" height="8" rx="1.75" fill="currentColor"/>
+          </svg>
+        </div>
+        <div>
+          <h1>BolBahi</h1>
+          <p>Speak. Record. Track.</p>
+        </div>
+        <button id="logoutButton" class="logout-button" type="button">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="voice-card">
+        <h2>Voice Entry</h2>
+        <p class="subtitle">Select language and speak</p>
+        <select id="languageSelect" class="language-select" aria-label="Choose language">
+          <option value="en-IN">English</option>
+          <option value="kn-IN">Kannada</option>
+          <option value="hi-IN">Hindi</option>
+        </select>
+        <button id="micButton" class="mic-button" type="button" aria-label="Start voice recording">🎤</button>
+        <div id="waveform" class="waveform">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p id="voiceStatus" class="voice-status">Tap the microphone to start</p>
+        <p class="voice-help">Example: “Ravi 500 pending” or “Ravi 200 paid”</p>
+      </section>
+
+      <section class="dashboard">
+        <div class="total-card paid-card">
+          <div class="card-label">Total Paid</div>
+          <div id="paidTotal" class="total-value">₹0</div>
+        </div>
+        <div class="total-card pending-card">
+          <div class="card-label">Total Pending</div>
+          <div id="pendingTotal" class="total-value">₹0</div>
+        </div>
+      </section>
+
+      <section class="search-section">
+        <h2>Customers</h2>
+        <input type="search" id="customerSearch" class="customer-search" placeholder="Search customer by name..." autocomplete="off">
+      </section>
+
+      <section class="records-section">
+        <div class="records-card">
+          <h2>Paid Transactions</h2>
+          <div id="paidList"><p class="empty">No paid transactions yet.</p></div>
+        </div>
+        <div class="records-card">
+          <h2>Pending Transactions</h2>
+          <div id="pendingList"><p class="empty">No pending transactions yet.</p></div>
+        </div>
+      </section>
+
+      <section id="customerProfile" class="profile-section" hidden>
+        <div class="profile-top">
+          <button id="backToCustomers" type="button" class="back-button">← Back to Customers</button>
+        </div>
+        <div id="profileContent"></div>
+      </section>
+
+      <button id="clearButton" class="clear-button" type="button">Clear All Records</button>
+    </main>
+
+    <footer>BolBahi — Your voice, your khata.</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

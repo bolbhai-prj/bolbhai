@@ -1,0 +1,95 @@
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,'Plus Jakarta Sans',sans-serif;background:#02040a;background-image:radial-gradient(ellipse at 18% 88%,rgba(13,59,158,.52) 0%,transparent 55%),radial-gradient(ellipse at 42% 95%,rgba(29,99,255,.28) 0%,transparent 45%),radial-gradient(circle at 82% 88%,rgba(10,36,98,.42) 0%,transparent 42%);background-attachment:fixed;color:#f1f5f9;min-height:100vh;line-height:1.45;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.brand h1,.customer-name,.total-value,.profile-heading{font-family:'Plus Jakarta Sans',Inter,sans-serif;letter-spacing:-.02em}
+button,input,select{font:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+
+.login-card{width:90%;max-width:390px;margin:10vh auto;padding:35px;background:rgba(7,16,38,.95);border:1px solid rgba(29,99,255,.4);border-radius:22px;text-align:center;box-shadow:0 15px 45px #0008}
+.login-mark{width:54px;height:54px;margin:0 auto 12px;border-radius:16px;background:linear-gradient(145deg,#092563,#1d63ff 65%,#38bdf8);display:grid;place-items:center;font-size:28px;font-weight:800}
+.login-card h1{font-size:32px;color:#60a5fa}
+.login-card>p{color:#94a3b8;margin:7px 0 24px}
+.login-card input{display:block;width:100%;padding:14px;margin-bottom:14px;border-radius:10px;border:1px solid #1d63ff;background:#02040a;color:white;outline:none}
+.login-card button{width:100%;padding:14px;border:0;border-radius:10px;background:#1d63ff;color:white;font-weight:700}
+.login-card button:hover{background:#3b82f6}
+.login-card .error{color:#fca5a5;min-height:20px;margin:10px 0}
+.login-card small{display:block;color:#94a3b8;font-size:11px;margin-top:12px}
+
+.header{width:100%;padding:20px 24px;position:sticky;top:0;z-index:20;background:rgba(2,4,10,.65);backdrop-filter:blur(12px);border-bottom:1px solid rgba(29,99,255,.14)}
+.brand{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.logo{width:54px;height:54px;flex-shrink:0;background:linear-gradient(145deg,#092563,#1d63ff 65%,#38bdf8);color:#fff;border:1px solid rgba(147,197,253,.5);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px #1d63ff73,inset 0 1px 0 #ffffff59}
+.logo-svg{width:30px;height:30px}
+.brand h1{font-size:26px;font-weight:800;line-height:1.1;background:linear-gradient(90deg,#fff,#bfdbfe 65%,#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand p{color:#94a3b8;font-size:13px;font-weight:500;margin-top:3px}
+.logout-button{margin-left:auto;padding:9px 14px;border:1px solid #355b9d;border-radius:9px;background:#0b1730;color:#dbeafe}
+.container{max-width:1100px;margin:auto;padding:20px}
+
+.voice-card{background:rgba(7,16,38,.72);backdrop-filter:blur(14px);border:1px solid rgba(29,99,255,.28);border-radius:20px;padding:35px;text-align:center;box-shadow:0 10px 30px #000a,inset 0 1px 0 #60a5fa26}
+.voice-card h2{font-size:24px;color:#f8fafc}
+.subtitle{color:#94a3b8;margin:10px 0 20px}
+.language-select{display:block;margin:0 auto 20px;padding:12px;border-radius:10px;border:1px solid #1d63ff59;background:#040a18;color:#f1f5f9;width:200px;font-size:15px;outline:none}
+.mic-button{width:90px;height:90px;border-radius:50%;border:1px solid #93c5fd73;background:linear-gradient(135deg,#0d3b9e,#1d63ff);color:white;font-size:35px;transition:.2s;box-shadow:0 0 24px #1d63ff80}
+.mic-button:hover{transform:scale(1.05);background:linear-gradient(135deg,#1248bc,#3b82f6);box-shadow:0 0 32px #3b82f6bf}
+.mic-button.listening{background:#b91c1c;animation:pulse 1s infinite alternate}
+@keyframes pulse{to{box-shadow:0 0 30px #ef4444}}
+.waveform{height:25px;display:flex;align-items:center;justify-content:center;gap:4px;margin:15px 0}
+.waveform span{width:4px;height:5px;border-radius:4px;background:#3b82f6}
+.waveform.active span{animation:wave .5s infinite alternate}
+.waveform span:nth-child(2){animation-delay:.1s}
+.waveform span:nth-child(3){animation-delay:.2s}
+.waveform span:nth-child(4){animation-delay:.3s}
+.waveform span:nth-child(5){animation-delay:.4s}
+@keyframes wave{to{height:22px}}
+.voice-status{color:#bfdbfe;font-size:14px}
+.voice-help{color:#64748b;font-size:12px;margin-top:8px}
+
+.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:25px 0}
+.total-card,.records-card{background:rgba(7,16,38,.72);border:1px solid rgba(29,99,255,.22);border-radius:16px;padding:22px}
+.card-label{color:#94a3b8;font-size:14px}
+.total-value{font-size:32px;font-weight:800;margin-top:8px}
+.paid-card .total-value,.paid-text{color:#34d399}
+.pending-card .total-value,.pending-text{color:#fbbf24}
+.search-section{margin:25px 0}
+.search-section h2,.records-card h2{font-size:20px;margin-bottom:14px}
+.customer-search{width:100%;padding:14px 16px;border:1px solid #1d63ff59;border-radius:12px;background:#070f20;color:white;outline:none}
+.records-section{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.records-card h2{font-size:18px}
+.empty{color:#64748b;font-size:14px;padding:10px 0}
+.customer-card{padding:15px;margin:10px 0;border:1px solid #1e3a5f;border-radius:12px;background:#050b18;cursor:pointer}
+.customer-header,.transaction-row,.profile-transaction-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.customer-name{font-weight:700}
+.customer-amount{font-weight:700;color:#bfdbfe}
+.transaction-history{margin:10px 0}
+.transaction-row{font-size:12px;color:#cbd5e1;padding:4px 0}
+.transaction-date{color:#64748b}
+.settle-button{padding:9px 12px;margin-top:8px;border:0;border-radius:8px;background:#047857;color:white;font-weight:600}
+.settle-button:hover{background:#059669}
+.paid-text,.pending-text{font-weight:700}
+.clear-button{display:block;margin:30px auto 10px;padding:12px 20px;border:1px solid #7f1d1d;border-radius:10px;background:#450a0a;color:#fecaca}
+
+.profile-section{margin-top:20px}
+.profile-top{margin-bottom:20px}
+.back-button{padding:10px 14px;border:1px solid #355b9d;border-radius:9px;background:#0b1730;color:#dbeafe}
+.profile-heading{font-size:25px;margin:10px 0 20px}
+.profile-summary{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:25px}
+.profile-stat{padding:18px;background:#071026;border:1px solid #1e3a5f;border-radius:12px}
+.profile-stat h3{font-size:13px;color:#94a3b8}
+.profile-stat p{font-size:22px;margin-top:8px}
+.profile-history-title{margin:20px 0 12px}
+.profile-transaction{padding:15px;margin:10px 0;background:#071026;border:1px solid #1e3a5f;border-radius:10px}
+.profile-transaction-date{font-size:12px;color:#64748b;margin-top:5px}
+footer{text-align:center;color:#64748b;padding:25px;font-size:13px}
+
+@media(max-width:700px){
+  .container{padding:14px}
+  .voice-card{padding:25px 16px}
+  .dashboard,.records-section{grid-template-columns:1fr;gap:12px}
+  .total-card{padding:18px}
+  .total-value{font-size:27px}
+  .header{padding:14px}
+  .logo{width:45px;height:45px}
+  .brand h1{font-size:22px}
+  .login-card{margin:7vh auto;padding:27px}
+  .profile-summary{grid-template-columns:1fr 1fr}
+}
