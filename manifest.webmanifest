@@ -1,0 +1,18 @@
+{
+  "name": "BolBahi - Voice Khata",
+  "short_name": "BolBahi",
+  "description": "Voice-based shopkeeper khata and transaction tracker.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#02040a",
+  "theme_color": "#02040a",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
